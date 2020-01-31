@@ -14,26 +14,34 @@ conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host
 print("CONNECTION", type(conn))
 
 curs = conn.cursor()
-print("CURSOR", type(cur))
+print("CURSOR", type(curs))
 
-sql_query = "SELECT usename, usecreatedb, usesuper, passwd FROM pg_user;"
-print("SQL:", sql_query)
+print("-------------------")
+query = "SELECT usename, usecreatedb, usesuper, passwd FROM pg_user;"
+print("SQL:", query)
+curs.execute(query)
+for row in curs.fetchall()[0:10]:
+    print(row)
 
-curs.execute(sql_query)
-result = curs.fetchone()
-print("RESULT", type(result))
-print(result)
 
+
+
+
+
+print("-------------------")
 query = """
-CREATE TABLE IF NOT EXISTS test_table (
+CREATE TABLE IF NOT EXISTS test_table2 (
   id SERIAL PRIMARY KEY,
   name varchar(40) NOT NULL,
   data JSONB
 );
 """
+print("SQL:", query)
+curs.execute(query)
 
+print("-------------------")
 query = """
-INSERT INTO test_table (name, data) VALUES
+INSERT INTO test_table2 (name, data) VALUES
 (
   'A row name',
   null
@@ -43,5 +51,18 @@ INSERT INTO test_table (name, data) VALUES
   '{ "a": 1, "b": ["dog", "cat", 42], "c": true }'::JSONB
 );
 """
+print("SQL:", query)
+curs.execute(query)
 
-query = "SELECT * FROM test_table;"
+print("-------------------")
+query = f"SELECT * FROM test_table2;"
+print("SQL:", query)
+curs.execute(query)
+for row in curs.fetchall():
+    print(row)
+
+# ACTUALLY SAVE THE TRANSACTIONS
+conn.commit()
+
+curs.close()
+conn.close()
