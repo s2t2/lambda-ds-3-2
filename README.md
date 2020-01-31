@@ -49,10 +49,14 @@ SQL Notes (BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-management/database-management-sql.md
 
 
+  + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/environment-variables.md
+  + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/modules/os.md#environment-variables
+  + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/packages/dotenv.md
+
+
 ```sh
 pipenv install psycopg2 #> leads to issues?
 ```
-
 
 start over with conda env:
 
