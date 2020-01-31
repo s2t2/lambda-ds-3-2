@@ -11,17 +11,17 @@ DB_NAME = os.getenv("DB_NAME", default="OOPS")
 DB_USER = os.getenv("DB_USER", default="OOPS")
 DB_PASSWORD = os.getenv("DB_PASSWORD", default="OOPS")
 
-conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
-print("CONNECTION", type(conn))
+connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
+print("CONNECTION", type(connection))
 
-curs = conn.cursor()
-print("CURSOR", type(curs))
+cursor = connection.cursor()
+print("CURSOR", type(cursor))
 
 print("-------------------")
 query = "SELECT usename, usecreatedb, usesuper, passwd FROM pg_user;"
 print("SQL:", query)
-curs.execute(query)
-for row in curs.fetchall()[0:10]:
+cursor.execute(query)
+for row in cursor.fetchall()[0:10]:
     print(row)
 
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS {table_name} (
 );
 """
 print("SQL:", query)
-curs.execute(query)
+cursor.execute(query)
 
 #
 # INSERT SOME DATA
@@ -49,20 +49,45 @@ curs.execute(query)
 
 my_dict = { "a": 1, "b": ["dog", "cat", 42], "c": 'true' }
 
-print("-------------------")
-query = f"""
-INSERT INTO {table_name} (name, data) VALUES
-(
-  'A row name',
-  null
-),
-(
-  'Another row, with JSON',
-  '{json.dumps(my_dict)}'::JSONB
-);
-"""
-print("SQL:", query)
-curs.execute(query)
+#print("-------------------")
+#query = f"""
+#INSERT INTO {table_name} (name, data) VALUES
+#(
+#  'A row name',
+#  null
+#),
+#(
+#  'Another row, with JSON',
+#  '{json.dumps(my_dict)}'::JSONB
+#);
+#"""
+#print("SQL:", query)
+#curs.execute(query)
+
+#print("-------------------")
+#query = f"""
+#INSERT INTO {table_name} (name, data) VALUES
+#(
+#  'A row name',
+#  null
+#),
+#(
+#  'Another row, with JSON',
+#  '{json.dumps(my_dict)}'::JSONB
+#);
+#"""
+#print("SQL:", query)
+#curs.execute(query)
+
+insertion_query = f"INSERT INTO {table_name} (name, data) VALUES (%s, %s)"
+cursor.execute(insertion_query,
+  ('A rowwwww', 'null')
+)
+cursor.execute(insertion_query,
+  ('Another row, with JSONNNNN', json.dumps(my_dict))
+)
+
+
 
 #
 # QUERY THE TABLE
@@ -71,12 +96,12 @@ curs.execute(query)
 print("-------------------")
 query = f"SELECT * FROM {table_name};"
 print("SQL:", query)
-curs.execute(query)
-for row in curs.fetchall():
+cursor.execute(query)
+for row in cursor.fetchall():
     print(row)
 
 # ACTUALLY SAVE THE TRANSACTIONS
-conn.commit()
+connection.commit()
 
-curs.close()
-conn.close()
+cursor.close()
+connection.close()
