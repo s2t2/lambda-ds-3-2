@@ -1,7 +1,7 @@
 # DS Unit 3 Sprint 2
 
 ```sh
-cd ds-3-2-1-inclass
+cd ds-3-2-inclass
 ```
 
 ```sh
@@ -55,10 +55,11 @@ SQL Notes (BONUS):
 
 
 ```sh
-pipenv install psycopg2 #> leads to issues?
+#pipenv install psycopg2 #> leads to issues? (need to use -binary)
+pipenv install psycopg2-binary #> leads to issues?
 ```
 
-start over with conda env:
+or start over with conda env:
 
 ```sh
 conda create -n db-env python=3.7
