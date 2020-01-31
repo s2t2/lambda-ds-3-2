@@ -63,5 +63,6 @@ start over with conda env:
 ```sh
 conda create -n db-env python=3.7
 conda activate db-env
-pip install psycopg2
+#pip install psycopg2
+pip install -r requirements.txt
 ```
