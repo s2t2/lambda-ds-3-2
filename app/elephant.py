@@ -2,6 +2,7 @@
 import os
 from dotenv import load_dotenv
 import psycopg2
+import json
 
 load_dotenv()
 
@@ -25,12 +26,15 @@ for row in curs.fetchall()[0:10]:
 
 
 
+#
+# CREATE THE TABLE
+#
 
-
+table_name = "test_table2"
 
 print("-------------------")
-query = """
-CREATE TABLE IF NOT EXISTS test_table2 (
+query = f"""
+CREATE TABLE IF NOT EXISTS {table_name} (
   id SERIAL PRIMARY KEY,
   name varchar(40) NOT NULL,
   data JSONB
@@ -39,23 +43,33 @@ CREATE TABLE IF NOT EXISTS test_table2 (
 print("SQL:", query)
 curs.execute(query)
 
+#
+# INSERT SOME DATA
+#
+
+my_dict = { "a": 1, "b": ["dog", "cat", 42], "c": 'true' }
+
 print("-------------------")
-query = """
-INSERT INTO test_table2 (name, data) VALUES
+query = f"""
+INSERT INTO {table_name} (name, data) VALUES
 (
   'A row name',
   null
 ),
 (
   'Another row, with JSON',
-  '{ "a": 1, "b": ["dog", "cat", 42], "c": true }'::JSONB
+  '{json.dumps(my_dict)}'::JSONB
 );
 """
 print("SQL:", query)
 curs.execute(query)
 
+#
+# QUERY THE TABLE
+#
+
 print("-------------------")
-query = f"SELECT * FROM test_table2;"
+query = f"SELECT * FROM {table_name};"
 print("SQL:", query)
 curs.execute(query)
 for row in curs.fetchall():
