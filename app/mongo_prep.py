@@ -75,6 +75,10 @@ for character in characters:
 print(collection.count_documents({}))
 print(collection.count_documents({"name": "Pikachu"}))
 
+pikas_cursor = collection.find({"name": "Pikachu"})
+pikas = list(pikas_cursor)
+print(len(pikas), "PIKAS")
+
 print("INSERT MANY...")
 
 db.things.insert_one({"thing":"one"})
