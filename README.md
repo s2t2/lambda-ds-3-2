@@ -64,6 +64,17 @@ or start over with conda env:
 ```sh
 conda create -n db-env python=3.7
 conda activate db-env
-#pip install psycopg2
+#pip install psycopg2 python-dotenv
+pip install -r requirements.txt
+```
+
+## Class 3
+
+Might need a separate Mongo env if 3.6:
+
+```sh
+conda create -n mongo-env python=3.7
+conda activate mongo-env
+#pip install pymongo dnspython python-dotenv
 pip install -r requirements.txt
 ```
