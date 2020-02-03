@@ -76,6 +76,8 @@ Reference Links:
   + https://api.mongodb.com/python/current/tutorial.html
   + https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_one
   + https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_many
+  + https://api.mongodb.com/python/current/tutorial.html#range-queries
+  + https://docs.mongodb.com/manual/reference/operator/query/
 
 
 ```sh

@@ -55,14 +55,14 @@ mewtwo = {
 
 pikachu = {
     "name": "Pikachu",
-    "level": 100,
+    "level": 30,
     "exp": 76000000000,
     "hp": 400,
 }
 
 blastoise = {
     "name": "Blastoise",
-    "lvl": 100,
+    "lvl": 70,
 }
 
 characters = [mewtwo, pikachu, blastoise]
@@ -72,7 +72,8 @@ for character in characters:
     print(character["name"])
     collection.insert_one(character)
 
-print(collection.count_documents({}))
+print(collection.count_documents({}), "DOCS")
+print(collection.count_documents({"level": {"$gte": 50}}), "ABOVE 50")
 print(collection.count_documents({"name": "Pikachu"}))
 
 pikas_cursor = collection.find({"name": "Pikachu"})
