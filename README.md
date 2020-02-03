@@ -70,11 +70,18 @@ pip install -r requirements.txt
 
 ## Class 3
 
-Might need a separate Mongo env if 3.6:
+Reference Links:
+
+  + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module3-nosql-and-document-oriented-databases
+  + https://api.mongodb.com/python/current/tutorial.html
+  + https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_one
+  + https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_many
+
 
 ```sh
-conda create -n mongo-env python=3.7
-conda activate mongo-env
-#pip install pymongo dnspython python-dotenv
-pip install -r requirements.txt
+pip install pymongo dnspython python-dotenv
+```
+
+```sh
+python app/mongo_prep.py
 ```
