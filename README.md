@@ -72,6 +72,7 @@ pip install -r requirements.txt
 
 Reference Links:
 
+  + https://learn.lambdaschool.com/ds/module/rec3JRFsRH2yeALwS/
   + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module3-nosql-and-document-oriented-databases
   + https://api.mongodb.com/python/current/tutorial.html
   + https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_one
