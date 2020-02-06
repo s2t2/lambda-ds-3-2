@@ -88,3 +88,14 @@ pip install pymongo dnspython python-dotenv
 ```sh
 python app/mongo_prep.py
 ```
+
+
+## Class 4
+
+Reference Links:
+
+  + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module4-acid-and-database-scalability-tradeoffs
+  + https://learn.lambdaschool.com/ds/module/rec9c9nW20Sn6TBAO/
+  + [Sprint Challenge](https://github.com/LambdaSchool/DS-Material/blob/master/unit3-data-engineering/sprint2-sql-and-databases/sprint-challenge/challenge.md)
+  + [Database Relations](https://docs.google.com/spreadsheets/d/1xZ98yXEieMtaWuVQh3lQjCuP5aIqhinQcnzbnux52tY/edit?usp=sharing)
+  + https://www.w3schools.com/sql/sql_exercises.asp
