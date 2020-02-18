@@ -14,6 +14,10 @@ pipenv install
 
 ## Class 1
 
+    Hey everyone, excited to dive into SQL with you tonight! To prepare for class, I recommend you download this database management software called TablePlus, which will allow you to interface with the Sqlite and PostgreSQL databases we'll be working with in this unit. https://tableplus.com/ (this would take the place of DB Browser and PGAdmin, which you'll see references to in the material)
+
+    Also download this example sqlite database called "chinook" https://www.sqlitetutorial.net/sqlite-sample-database/ which we will use to practice SQL queries
+
 Lambda Material:
 
   + https://learn.lambdaschool.com/ds/module/recmwiPQG5zueKFCG/
@@ -60,6 +64,7 @@ PostgreSQL & Psycopg Docs:
 
   + https://www.psycopg.org/docs/
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/packages/psycopg.md
+  + https://www.postgresql.org/docs/9.5/datatype.html
 
 Environment Variables:
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/environment-variables.md
