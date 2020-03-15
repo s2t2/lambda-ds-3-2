@@ -24,12 +24,12 @@ SQLite:
   + https://docs.python.org/3/library/sqlite3.html
   + https://kite.com/python/examples/3884/sqlite3-use-a-row-factory-to-access-values-by-column-name
 
-Practice Database:
+Practice SQLite Database:
 
   + https://www.sqlitetutorial.net/sqlite-sample-database/
   + https://www.sqlitetutorial.net/wp-content/uploads/2018/03/sqlite-sample-database-diagram-color.pdf
 
-Database Concept Notes (BONUS):
+Database Concept Notes (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/conceptual-design.md
@@ -37,7 +37,7 @@ Database Concept Notes (BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/entity-relationship-diagramming.md
 
 
-SQL Notes (BONUS):
+SQL Notes (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/best-practices.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/sql-style-guide.md
@@ -63,23 +63,26 @@ Environment Variables:
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/modules/os.md#environment-variables
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/packages/dotenv.md
 
-(BONUS) Database Management SQL:
+Database Management SQL (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-management/database-management-sql.md
 
+### Virtual Environment Management
+
+via Pipenv:
 
 ```sh
-#pipenv install psycopg2 #> leads to issues? (need to use -binary)
-pipenv install psycopg2-binary #> leads to issues?
+pipenv --python 3.7 # (first time only)
+pipenv install python-dotenv psycopg2-binary # NOTE: the "-binary"
+pipenv shell
 ```
 
-or start over with conda env:
+... or via Anaconda:
 
 ```sh
-conda create -n db-env python=3.7
+conda create -n db-env python=3.7 # (first time only)
 conda activate db-env
-#pip install psycopg2 python-dotenv
-pip install -r requirements.txt
+pip install python-dotenv psycopg2
 ```
 
 ## Class 3
