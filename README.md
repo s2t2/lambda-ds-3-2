@@ -45,6 +45,8 @@ SQL Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-aggregate-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/multi-table-sql.md
 
+Reference ["app/chinook_queries.py"](/app/chinook_queries.py).
+
 ## Class 2
 
 Lambda Material:
@@ -67,23 +69,17 @@ Database Management SQL (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-management/database-management-sql.md
 
-### Virtual Environment Management
-
-via Pipenv:
+Installing package dependencies:
 
 ```sh
-pipenv --python 3.7 # (first time only)
+# for Pipenv users:
 pipenv install python-dotenv psycopg2-binary # NOTE: the "-binary"
-pipenv shell
+
+# for conda users:
+pip install pandas python-dotenv psycopg2
 ```
 
-... or via Anaconda:
-
-```sh
-conda create -n db-env python=3.7 # (first time only)
-conda activate db-env
-pip install python-dotenv psycopg2
-```
+Reference ["app/elephant.py"](/app/elephant.py).
 
 ## Class 3
 
@@ -100,19 +96,17 @@ MongoDB Docs:
   + https://api.mongodb.com/python/current/tutorial.html#range-queries
   + https://docs.mongodb.com/manual/reference/operator/query/
 
+Installing packages:
 
 ```sh
 # for pipenv users:
-pipenv install pymongo dnspython python-dotenv
+pipenv install pymongo dnspython
 
 # for conda users:
-pip install pymongo dnspython python-dotenv
+pip install pymongo dnspython
 ```
 
-```sh
-python app/mongo_prep.py
-```
-
+Reference ["app/mongo_prep.py"](/app/mongo_prep.py).
 
 ## Class 4
 
@@ -128,9 +122,9 @@ Database Transactions and ACID Properties:
   + https://www.techopedia.com/definition/23949/atomicity-consistency-isolation-durability-acid
   + https://pynative.com/python-mysql-transaction-management-using-commit-rollback/
 
-Normalization Practice:
+Normalization Practice (FYI / BONUS):
 
-  + (BONUS) https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/logical-design.md
+  + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/logical-design.md
   + https://docs.google.com/spreadsheets/d/1xZ98yXEieMtaWuVQh3lQjCuP5aIqhinQcnzbnux52tY/edit?usp=sharing
 
 SQL Review:
