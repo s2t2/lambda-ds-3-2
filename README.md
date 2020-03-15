@@ -1,22 +1,14 @@
 # DS Unit 3 Sprint 2
 
-```sh
-cd ds-3-2-inclass
-```
-
-```sh
-pipenv install
-```
-
-
-
-<hr>
-
 ## Class 1
 
-    Hey everyone, excited to dive into SQL with you tonight! To prepare for class, I recommend you download this database management software called TablePlus, which will allow you to interface with the Sqlite and PostgreSQL databases we'll be working with in this unit. https://tableplus.com/ (this would take the place of DB Browser and PGAdmin, which you'll see references to in the material)
+    Hey @channel, tomorrow we'll begin our second sprint with an introduction to relational databases and SQL. To prepare for class, I recommend you:
 
-    Also download this example sqlite database called "chinook" https://www.sqlitetutorial.net/sqlite-sample-database/ which we will use to practice SQL queries
+    1) Download this example sqlite database called "chinook" (https://www.sqlitetutorial.net/sqlite-sample-database/), which we'll use to practice SQL queries.
+
+    2) Optionally download and install this database management software called TablePlus (https://tableplus.com/) which will allow you to interface with Sqlite and PostgreSQL databases we'll be working with in this unit. FYI: TablePlus is my preferred / recommended tool these days, but you could always use alternative tools like DB Browser and/or PgAdmin instead, as referenced in the materials.
+
+    Heads-up: I'll share a lecture repo link before class tomorrow morning. See you then!
 
 Lambda Material:
 
@@ -107,6 +99,10 @@ MongoDB Docs:
 
 
 ```sh
+# for pipenv users:
+pipenv install pymongo dnspython python-dotenv
+
+# for conda users:
 pip install pymongo dnspython python-dotenv
 ```
 
@@ -123,10 +119,16 @@ Lambda Material:
   + https://learn.lambdaschool.com/ds/module/rec9c9nW20Sn6TBAO/
   + [Sprint Challenge](https://github.com/LambdaSchool/DS-Material/blob/master/unit3-data-engineering/sprint2-sql-and-databases/sprint-challenge/challenge.md)
 
-Normalization:
+Database Transactions and ACID Properties:
 
-  + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/logical-design.md
-  + [Database Relations Exercise](https://docs.google.com/spreadsheets/d/1xZ98yXEieMtaWuVQh3lQjCuP5aIqhinQcnzbnux52tY/edit?usp=sharing)
+  + https://www.essentialsql.com/what-is-meant-by-acid/
+  + https://www.techopedia.com/definition/23949/atomicity-consistency-isolation-durability-acid
+  + https://pynative.com/python-mysql-transaction-management-using-commit-rollback/
+
+Normalization Practice:
+
+  + (BONUS) https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/logical-design.md
+  + https://docs.google.com/spreadsheets/d/1xZ98yXEieMtaWuVQh3lQjCuP5aIqhinQcnzbnux52tY/edit?usp=sharing
 
 SQL Review:
 
