@@ -45,6 +45,8 @@ SQL Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-aggregate-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/multi-table-sql.md
 
+### Part I - Single Table SQL
+
 ```sql
 SELECT
     1 as first_col,
@@ -54,6 +56,112 @@ SELECT
     2 * 10,
     6
 ```
+
+```sql
+-- who are our customers? (what are their names?)
+SELECT
+  CustomerId
+  ,FirstName
+  ,LastName
+FROM customers
+```
+
+```sql
+-- which customers are from the US?
+SELECT
+  CustomerId
+  ,FirstName
+  ,LastName
+FROM customers
+WHERE Country = "USA"
+```
+
+```sql
+-- which customers are from the US?
+SELECT
+  CustomerId
+  ,FirstName
+  ,LastName
+  ,Country
+FROM customers
+-- WHERE Country = "USA"
+-- WHERE Country <> "USA"
+-- WHERE Country = "USA" or Country = "United Kingdom"
+WHERE Country in ("USA", "United Kingdom")
+```
+
+```sql
+-- example of ORDER BY
+SELECT
+  *
+FROM customers
+WHERE Country in ("USA", "United Kingdom")
+ORDER BY Country ASC, State DESC -- ASC is the default
+```
+
+```sql
+-- how many customers do we have?
+SELECT
+  -- count(*) as customer_count -- > 59
+  -- count(CustomerId) as customer_count
+  count(distinct CustomerId) as customer_count -- > 59
+FROM customers
+```
+
+```sql
+-- how many customers in each country?
+SELECT
+  Country
+  ,count(distinct CustomerId) as customer_count -- > 59
+FROM customers
+GROUP BY Country
+```
+
+```sql
+-- which 5 countries have the most customers?
+SELECT
+  Country
+  ,count(distinct CustomerId) as customer_count -- > 59
+FROM customers
+GROUP BY Country
+ORDER BY customer_count DESC
+LIMIT 5
+```
+
+### Part II - Multi-Table SQL
+
+```sql
+-- for each artist,
+-- how many albums?
+-- and how many tracks?
+-- row per artist (275)
+SELECT
+  artists.ArtistId
+  ,artists.Name as ArtistName
+  ,albums.AlbumId
+  ,tracks.TrackId
+FROM artists
+LEFT JOIN albums ON artists.ArtistId = albums.ArtistId
+LEFT JOIN tracks ON tracks.AlbumId = albums.AlbumId
+```
+
+```sql
+-- for each artist,
+-- how many albums?
+-- and how many tracks?
+-- row per artist (275)
+SELECT
+  artists.ArtistId
+  ,artists.Name as ArtistName
+  ,count(distinct albums.AlbumId) as AlbumCount
+  ,count(distinct tracks.TrackId) as TrackCount
+FROM artists
+LEFT JOIN albums ON artists.ArtistId = albums.ArtistId
+LEFT JOIN tracks ON tracks.AlbumId = albums.AlbumId
+GROUP BY artists.ArtistId
+```
+
+### Part III - Executing SQL from Python
 
 Reference ["app/chinook_queries.py"](/app/chinook_queries.py).
 
