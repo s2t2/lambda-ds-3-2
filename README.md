@@ -99,6 +99,8 @@ WHERE Country in ("USA", "United Kingdom")
 ORDER BY Country ASC, State DESC -- ASC is the default
 ```
 
+### Part I (cont'd) - Single Table SQL w/ Aggregations
+
 ```sql
 -- how many customers do we have?
 SELECT
