@@ -110,6 +110,10 @@ SELECT
 FROM customers
 ```
 
+> NOTE: when using the GROUP BY clause, we specify our result set should have a "row per" all the attributes included in the GROUP BY clause.
+
+> RULE OF THUMB: when using the GROUP BY clause, all selected attributes that are not included in the GROUP BY clause should be removed from the SELECT clause, or or aggregated in the SELECT clause
+
 ```sql
 -- how many customers in each country?
 SELECT
