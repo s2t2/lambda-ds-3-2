@@ -130,6 +130,25 @@ LIMIT 5
 
 ### Part II - Multi-Table SQL
 
+Taking an iterative approach to illustrate the difference between inner and outer (i.e. left) joins.
+
+```sql
+-- for each artist,
+-- how many albums?
+-- and how many tracks?
+-- row per artist (275)
+-- row per artist (204???)
+SELECT
+  artists.ArtistId
+  ,artists.Name as ArtistName
+  ,count(distinct albums.AlbumId) as AlbumCount
+  ,count(distinct tracks.TrackId) as TrackCount
+FROM artists
+JOIN albums ON artists.ArtistId = albums.ArtistId
+JOIN tracks ON tracks.AlbumId = albums.AlbumId
+GROUP BY artists.ArtistId
+```
+
 ```sql
 -- for each artist,
 -- how many albums?
