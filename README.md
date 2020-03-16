@@ -45,6 +45,16 @@ SQL Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-aggregate-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/multi-table-sql.md
 
+```sql
+SELECT
+    1 as first_col,
+    2 as second_col,
+    3,
+    "hello" as my_message,
+    2 * 10,
+    6
+```
+
 Reference ["app/chinook_queries.py"](/app/chinook_queries.py).
 
 ## Class 2
