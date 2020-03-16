@@ -136,6 +136,8 @@ LIMIT 5
 
 ### Part II - Multi-Table SQL
 
+![a venn diagram depicting the difference between inner and outer joins](https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/Outer-Join.jpg)
+
 Taking an iterative approach to illustrate the difference between inner and outer (i.e. left) joins.
 
 ```sql
@@ -187,6 +189,7 @@ LEFT JOIN albums ON artists.ArtistId = albums.ArtistId
 LEFT JOIN tracks ON tracks.AlbumId = albums.AlbumId
 GROUP BY artists.ArtistId
 ```
+
 
 ### Part III - Executing SQL from Python
 
