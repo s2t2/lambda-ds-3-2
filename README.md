@@ -157,7 +157,7 @@ JOIN tracks ON tracks.AlbumId = albums.AlbumId
 GROUP BY artists.ArtistId
 ```
 
-Why are we losing some artists? Because not all artists have albums. Maintain original table be using an outer join:
+Why are we losing some artists? Because not all artists have albums. Maintain original table by using an outer join:
 
 ```sql
 -- for each artist,
