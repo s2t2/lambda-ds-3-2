@@ -29,6 +29,8 @@ PostgreSQL & Psycopg Docs:
   + https://www.psycopg.org/docs/
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/python/packages/psycopg.md
   + https://www.postgresql.org/docs/9.5/datatype.html
+  + https://www.psycopg.org/docs/usage.html
+  + https://www.psycopg.org/docs/cursor.html#cursor
 
 Environment Variables:
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/environment-variables.md
