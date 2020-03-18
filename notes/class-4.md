@@ -7,16 +7,22 @@ Lambda Material:
   + https://learn.lambdaschool.com/ds/module/rec9c9nW20Sn6TBAO/
   + [Sprint Challenge](https://github.com/LambdaSchool/DS-Material/blob/master/unit3-data-engineering/sprint2-sql-and-databases/sprint-challenge/challenge.md)
 
+## Part I
+
 Database Transactions and ACID Properties:
 
   + https://www.essentialsql.com/what-is-meant-by-acid/
   + https://www.techopedia.com/definition/23949/atomicity-consistency-isolation-durability-acid
   + https://pynative.com/python-mysql-transaction-management-using-commit-rollback/
 
+## Part II
+
 Normalization Practice (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/logical-design.md
   + https://docs.google.com/spreadsheets/d/1xZ98yXEieMtaWuVQh3lQjCuP5aIqhinQcnzbnux52tY/edit?usp=sharing
+
+## Part III
 
 SQL Review:
 

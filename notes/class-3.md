@@ -22,6 +22,10 @@ MongoDB Docs:
   + https://api.mongodb.com/python/current/tutorial.html#range-queries
   + https://docs.mongodb.com/manual/reference/operator/query/
 
+Vocabulary comparison:
+
+![](https://www.includehelp.com/mongodb/Images/mongodb-structure.jpg)
+
 Configuring Mongo Atlas:
 
   + IP Address to allow connections from anywhere: `0.0.0.0/0`
