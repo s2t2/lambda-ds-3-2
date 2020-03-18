@@ -8,6 +8,12 @@ Lambda Material:
   + https://learn.lambdaschool.com/ds/module/rec3JRFsRH2yeALwS/
   + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module3-nosql-and-document-oriented-databases
 
+## Part I
+
+Recap of previous assignment (inserting "titanic.csv" file data into a PostgreSQL database).
+
+## Part II and III
+
 MongoDB Docs:
 
   + https://api.mongodb.com/python/current/tutorial.html
