@@ -19,7 +19,7 @@ Topic: Insert statements in SQL.
 Database Management SQL (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-management/database-management-sql.md
-
+  + https://stackoverflow.com/questions/28558920/postgresql-foreign-key-syntax/28560619
 
 ### Part III
 
