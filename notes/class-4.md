@@ -5,7 +5,6 @@ Lambda Material:
 
   + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module4-acid-and-database-scalability-tradeoffs
   + https://learn.lambdaschool.com/ds/module/rec9c9nW20Sn6TBAO/
-  + [Sprint Challenge](https://github.com/LambdaSchool/DS-Material/blob/master/unit3-data-engineering/sprint2-sql-and-databases/sprint-challenge/challenge.md)
 
 ## Part I
 
