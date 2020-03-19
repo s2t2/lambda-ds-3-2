@@ -17,10 +17,11 @@ Database Transactions and ACID Properties:
 
 ## Part II
 
-Normalization Practice (FYI / BONUS):
+Normalization / Database Design Practice (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/logical-design.md
   + https://docs.google.com/spreadsheets/d/1xZ98yXEieMtaWuVQh3lQjCuP5aIqhinQcnzbnux52tY/edit?usp=sharing
+  + https://www.lucidchart.com/ 
 
 ## Part III
 
