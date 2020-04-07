@@ -1,14 +1,6 @@
 
 ## Class 1
 
-> Hey @channel, tomorrow we'll begin our second sprint with an introduction to relational databases and SQL. To prepare for class, I recommend you:
->
->    1) Download this example sqlite database called "chinook" (https://www.sqlitetutorial.net/sqlite-sample-database/), which we'll use to practice SQL queries.
->
->    2) Optionally download and install this database management software called TablePlus (https://tableplus.com/) which will allow you to interface with Sqlite and PostgreSQL databases we'll be working with in this unit. FYI: TablePlus is my preferred / recommended tool these days, but you could always use alternative tools like DB Browser and/or PgAdmin instead, as referenced in the materials.
->
->    Heads-up: I'll share a lecture repo link before class tomorrow morning. See you then!
-
 Lambda Material:
 
   + https://learn.lambdaschool.com/ds/module/recmwiPQG5zueKFCG/
