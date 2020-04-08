@@ -82,18 +82,17 @@ SELECT
   ,LastName
 FROM customers
 WHERE Country = "USA"
+-- WHERE Country <> "USA"
 ```
 
 ```sql
--- which customers are from the US?
+-- which customers are from either the US or the UK?
 SELECT
   CustomerId
   ,FirstName
   ,LastName
   ,Country
 FROM customers
--- WHERE Country = "USA"
--- WHERE Country <> "USA"
 -- WHERE Country = "USA" or Country = "United Kingdom"
 WHERE Country in ("USA", "United Kingdom")
 ```
@@ -112,15 +111,11 @@ ORDER BY Country ASC, State DESC -- ASC is the default
 ```sql
 -- how many customers do we have?
 SELECT
-  -- count(*) as customer_count -- > 59
-  -- count(CustomerId) as customer_count
-  count(distinct CustomerId) as customer_count -- > 59
+  -- count(*) as customer_count -- counts number of rows
+  -- count(CustomerId) as customer_count -- counts number of rows
+  count(distinct CustomerId) as customer_count -- > counts actual unique values
 FROM customers
 ```
-
-> NOTE: when using the GROUP BY clause, we specify our result set should have a "row per" all the attributes included in the GROUP BY clause.
-
-> RULE OF THUMB: when using the GROUP BY clause, all selected attributes that are not included in the GROUP BY clause should be removed from the SELECT clause, or or aggregated in the SELECT clause
 
 ```sql
 -- how many customers are from the US?
@@ -129,6 +124,12 @@ SELECT
 FROM customers
 WHERE Country = "USA"
 ```
+
+Using a `GROUP BY` clause:
+
+> NOTE: when using the GROUP BY clause, we specify our result set should have a "row per" all the attributes included in the GROUP BY clause.
+
+> RULE OF THUMB: when using the GROUP BY clause, all selected attributes that are not included in the GROUP BY clause should be removed from the SELECT clause, or or aggregated in the SELECT clause
 
 ```sql
 -- how many customers in each country?
