@@ -16,15 +16,12 @@ DBMS Tool:
 
   + https://tableplus.com/
 
-SQLite:
-
-  + https://docs.python.org/3/library/sqlite3.html
-  + https://kite.com/python/examples/3884/sqlite3-use-a-row-factory-to-access-values-by-column-name
-
 Practice SQLite Database:
 
   + https://www.sqlitetutorial.net/sqlite-sample-database/
   + https://www.sqlitetutorial.net/wp-content/uploads/2018/03/sqlite-sample-database-diagram-color.pdf
+
+## Part 0 - Preface
 
 Database Concept Notes (FYI / BONUS):
 
@@ -41,8 +38,6 @@ SQL Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-aggregate-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/multi-table-sql.md
  
-## Part 0 - Preface
-
 Like an English sentence, each SQL query is comprised of one or more clauses. Here are all the clauses available for use in a SQL query, in the order they are to be used:
 
 ```
@@ -56,6 +51,7 @@ ORDER BY ...
 ```
 
 It is not necessary to use all clauses in a single query. The `JOIN` clause is the only one which can appear multiple times. 
+
 
 ## Part I - Single Table SQL
 
@@ -127,6 +123,14 @@ FROM customers
 > RULE OF THUMB: when using the GROUP BY clause, all selected attributes that are not included in the GROUP BY clause should be removed from the SELECT clause, or or aggregated in the SELECT clause
 
 ```sql
+-- how many customers are from the US?
+SELECT 
+  count(distinct CustomerId) 
+FROM customers
+WHERE Country = "USA"
+```
+
+```sql
 -- how many customers in each country?
 SELECT
   Country
@@ -147,6 +151,19 @@ LIMIT 5
 ```
 
 ## Part II - Multi-Table SQL
+
+
+```sql
+-- for each album, what is the name of the artist
+-- 347 rows (row per album)
+SELECT 
+  albums.AlbumId
+  ,albums.Title
+  ,artists.Name
+FROM albums
+JOIN artists ON albums.ArtistId = artists.ArtistId 
+```
+
 
 ![a venn diagram depicting the difference between inner and outer joins](https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/Outer-Join.jpg)
 
@@ -204,6 +221,11 @@ GROUP BY artists.ArtistId
 
 
 ## Part III - Executing SQL from Python
+
+SQLite:
+
+  + https://docs.python.org/3/library/sqlite3.html
+  + https://kite.com/python/examples/3884/sqlite3-use-a-row-factory-to-access-values-by-column-name
 
 Executing an SQL query:
 
