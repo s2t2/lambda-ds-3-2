@@ -1,11 +1,17 @@
 
-## Class 1
+# Sprint 2 - Class 1
 
+Agenda:
+
+  1. Single-table SQL
+  2. Multi-table SQL
+  3. Executing SQL from Python
+ 
 Lambda Material:
 
   + https://learn.lambdaschool.com/ds/module/recmwiPQG5zueKFCG/
   + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module1-introduction-to-sql
-
+ 
 DBMS Tool:
 
   + https://tableplus.com/
@@ -27,7 +33,6 @@ Database Concept Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/physical-design.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/entity-relationship-diagramming.md
 
-
 SQL Notes (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/best-practices.md
@@ -35,8 +40,24 @@ SQL Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-aggregate-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/multi-table-sql.md
+ 
+## Part 0 - Preface
 
-### Part I - Single Table SQL
+Like an English sentence, each SQL query is comprised of one or more clauses. Here are all the clauses available for use in a SQL query, in the order they are to be used:
+
+```
+SELECT ...
+FROM ...
+JOIN ...
+WHERE ...
+GROUP BY ...
+HAVING ...
+ORDER BY ...
+```
+
+It is not necessary to use all clauses in a single query. The `JOIN` clause is the only one which can appear multiple times. 
+
+## Part I - Single Table SQL
 
 ```sql
 SELECT
@@ -90,7 +111,7 @@ WHERE Country in ("USA", "United Kingdom")
 ORDER BY Country ASC, State DESC -- ASC is the default
 ```
 
-### Part I (cont'd) - Single Table SQL w/ Aggregations
+## Part I (cont'd) - Single Table SQL w/ Aggregations
 
 ```sql
 -- how many customers do we have?
@@ -125,7 +146,7 @@ ORDER BY customer_count DESC
 LIMIT 5
 ```
 
-### Part II - Multi-Table SQL
+## Part II - Multi-Table SQL
 
 ![a venn diagram depicting the difference between inner and outer joins](https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/Outer-Join.jpg)
 
@@ -182,7 +203,7 @@ GROUP BY artists.ArtistId
 ```
 
 
-### Part III - Executing SQL from Python
+## Part III - Executing SQL from Python
 
 Executing an SQL query:
 
