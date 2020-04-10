@@ -48,6 +48,8 @@ pip install pandas python-dotenv psycopg2
 ```
 
 ```py
+# app/elephant_queries.py
+
 import os
 from dotenv import load_dotenv
 import psycopg2
@@ -70,4 +72,5 @@ result = cursor.fetchall()
 print("RESULT:", type(result))
 print(result)
 ```
-Reference ["app/elephant.py"](/app/elephant.py).
+
+See also ["app/elephant_multi.py"](/app/elephant_multi.py) for guidance about a few approaches we can take to insert data from a Python script.
