@@ -1,24 +1,39 @@
 
-## Class 1
+# Sprint 2 - Class 1
 
+Preparation Announcement:
+
+```
+Hey @channel, we're going to begin this sprint with an introduction to relational databases and SQL. To prepare for class, please:
+
+    1) Download this example sqlite database called "chinook" (https://www.sqlitetutorial.net/sqlite-sample-database/), which we'll use to practice SQL queries.
+
+    2) Optionally download and install this database management software called TablePlus (https://tableplus.com/) which will allow you to interface with the SQLite and PostgreSQL databases we'll be working with in this unit. FYI: TablePlus is my preferred / recommended tool these days, but you could always use alternative tools like DB Browser and/or PgAdmin instead, as referenced in the materials.
+
+And as always, fork the official Lambda repo: https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases
+```
+
+Agenda:
+
+  1. Single-table SQL
+  2. Multi-table SQL
+  3. Executing SQL from Python
+ 
 Lambda Material:
 
   + https://learn.lambdaschool.com/ds/module/recmwiPQG5zueKFCG/
   + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module1-introduction-to-sql
-
+ 
 DBMS Tool:
 
   + https://tableplus.com/
-
-SQLite:
-
-  + https://docs.python.org/3/library/sqlite3.html
-  + https://kite.com/python/examples/3884/sqlite3-use-a-row-factory-to-access-values-by-column-name
 
 Practice SQLite Database:
 
   + https://www.sqlitetutorial.net/sqlite-sample-database/
   + https://www.sqlitetutorial.net/wp-content/uploads/2018/03/sqlite-sample-database-diagram-color.pdf
+
+## Part 0 - Preface
 
 Database Concept Notes (FYI / BONUS):
 
@@ -27,7 +42,6 @@ Database Concept Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/physical-design.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/database-design/entity-relationship-diagramming.md
 
-
 SQL Notes (FYI / BONUS):
 
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/best-practices.md
@@ -35,8 +49,23 @@ SQL Notes (FYI / BONUS):
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/single-table-aggregate-sql.md
   + https://github.com/prof-rossetti/gwu-istm-4121-201509/blob/master/notes/data-analysis/multi-table-sql.md
+ 
+Like an English sentence, each SQL query is comprised of one or more clauses. Here are all the clauses available for use in a SQL query, in the order they are to be used:
 
-### Part I - Single Table SQL
+```
+SELECT ...
+FROM ...
+JOIN ...
+WHERE ...
+GROUP BY ...
+HAVING ...
+ORDER BY ...
+```
+
+It is not necessary to use all clauses in a single query. The `JOIN` clause is the only one which can appear multiple times. 
+
+
+## Part I - Single Table SQL
 
 ```sql
 SELECT
@@ -65,18 +94,17 @@ SELECT
   ,LastName
 FROM customers
 WHERE Country = "USA"
+-- WHERE Country <> "USA"
 ```
 
 ```sql
--- which customers are from the US?
+-- which customers are from either the US or the UK?
 SELECT
   CustomerId
   ,FirstName
   ,LastName
   ,Country
 FROM customers
--- WHERE Country = "USA"
--- WHERE Country <> "USA"
 -- WHERE Country = "USA" or Country = "United Kingdom"
 WHERE Country in ("USA", "United Kingdom")
 ```
@@ -90,16 +118,26 @@ WHERE Country in ("USA", "United Kingdom")
 ORDER BY Country ASC, State DESC -- ASC is the default
 ```
 
-### Part I (cont'd) - Single Table SQL w/ Aggregations
+## Part I (cont'd) - Single Table SQL w/ Aggregations
 
 ```sql
 -- how many customers do we have?
 SELECT
-  -- count(*) as customer_count -- > 59
-  -- count(CustomerId) as customer_count
-  count(distinct CustomerId) as customer_count -- > 59
+  -- count(*) as customer_count -- counts number of rows
+  -- count(CustomerId) as customer_count -- counts number of rows
+  count(distinct CustomerId) as customer_count -- > counts actual unique values
 FROM customers
 ```
+
+```sql
+-- how many customers are from the US?
+SELECT 
+  count(distinct CustomerId) 
+FROM customers
+WHERE Country = "USA"
+```
+
+Using a `GROUP BY` clause:
 
 > NOTE: when using the GROUP BY clause, we specify our result set should have a "row per" all the attributes included in the GROUP BY clause.
 
@@ -125,7 +163,20 @@ ORDER BY customer_count DESC
 LIMIT 5
 ```
 
-### Part II - Multi-Table SQL
+## Part II - Multi-Table SQL
+
+
+```sql
+-- for each album, what is the name of the artist
+-- 347 rows (row per album)
+SELECT 
+  albums.AlbumId
+  ,albums.Title
+  ,artists.Name
+FROM albums
+JOIN artists ON albums.ArtistId = artists.ArtistId 
+```
+
 
 ![a venn diagram depicting the difference between inner and outer joins](https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/Outer-Join.jpg)
 
@@ -182,7 +233,12 @@ GROUP BY artists.ArtistId
 ```
 
 
-### Part III - Executing SQL from Python
+## Part III - Executing SQL from Python
+
+SQLite:
+
+  + https://docs.python.org/3/library/sqlite3.html
+  + https://kite.com/python/examples/3884/sqlite3-use-a-row-factory-to-access-values-by-column-name
 
 Executing an SQL query:
 
