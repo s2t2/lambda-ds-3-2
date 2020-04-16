@@ -6,6 +6,14 @@ Lambda Material:
   + https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases/tree/master/module4-acid-and-database-scalability-tradeoffs
   + https://learn.lambdaschool.com/ds/module/rec9c9nW20Sn6TBAO/
 
+Agenda:
+
+  1. ACID
+  2. Database Tradeoffs and Distributed Computing
+  3. Database Design - Tables
+  4. Database Design - ERDs
+  5. SQL Review (Lightning Round)
+
 ## Part I
 
 Database Transactions and ACID Properties:
