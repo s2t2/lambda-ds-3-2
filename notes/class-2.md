@@ -31,6 +31,9 @@ PostgreSQL & Psycopg Docs:
   + https://www.postgresql.org/docs/9.5/datatype.html
   + https://www.psycopg.org/docs/usage.html
   + https://www.psycopg.org/docs/cursor.html#cursor
+  + https://www.psycopg.org/docs/cursor.html#fetch
+  + https://www.psycopg.org/docs/extras.html
+  + https://www.psycopg.org/docs/extras.html#dictionary-like-cursor
 
 Environment Variables:
   + https://github.com/prof-rossetti/intro-to-python/blob/master/notes/environment-variables.md
@@ -73,4 +76,11 @@ print("RESULT:", type(result))
 print(result)
 ```
 
+Head's up: you can use this configuration to refer to the rows as dictionaries (like the Row Factory approach from SQLite):
+
+```py
+# ...
+cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
+# ...
+```
 See also ["app/elephant_multi.py"](/app/elephant_multi.py) for guidance about a few approaches we can take to insert data from a Python script.
