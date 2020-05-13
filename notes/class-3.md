@@ -84,4 +84,7 @@ print("DOCS:", collection.count_documents({}))
 print(collection.count_documents({"name": "Pikachu"}))
 ```
 
+> FYI: if you see "pymongo.errors.ServerSelectionTimeoutError [SSL: CERTIFICATE_VERIFY_FAILED]", and you have already allowed  access from all IP addresses, and you have already installed the `dnspython` package, try adding `&ssl=true&ssl_cert_reqs=CERT_NONE` to the end of the connection string (thanks to Aaron from DS 14)!
+
+
 Reference also ["app/mongo_prep.py"](/app/mongo_prep.py).
