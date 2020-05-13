@@ -1,5 +1,6 @@
 
 # shared by Aaron from DS 14
+# https://lambda-students.slack.com/archives/GT7MZ0TKK/p1589389551424400
 
 conn = psycopg2.connect(
     dbname=DB_NAME,
