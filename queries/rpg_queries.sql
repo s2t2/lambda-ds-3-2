@@ -1,4 +1,4 @@
-
+-- how many characters of each subclass?
 select
   ch.character_id
   ,ch.name
@@ -46,3 +46,28 @@ group by char_type
 pragma table_info(charactercreator_character_inventory)
 
 pragma foreign_key_list(charactercreator_character_inventory)
+
+
+
+
+
+
+
+
+
+-- How many Weapons does each character have? 
+-- (Return first 20 rows) 
+-- row per character (302, including ones that have zero)
+-- three cols: char id, char name, weapon_count
+
+SELECT 
+  c.character_id
+  ,c.name as character_name
+  -- ,inv.item_id
+  -- ,w.item_ptr_id as weapon_id
+  ,count(distinct w.item_ptr_id) as weapon_count
+FROM charactercreator_character c
+LEFT JOIN charactercreator_character_inventory inv ON c.character_id = inv.character_id
+LEFT JOIN armory_weapon w ON w.item_ptr_id = inv.item_id
+GROUP BY c.character_id
+
