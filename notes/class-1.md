@@ -8,7 +8,7 @@ Hey @channel, we're going to begin this sprint with an introduction to relationa
 
     1) Download this example sqlite database called "chinook" (https://www.sqlitetutorial.net/sqlite-sample-database/), which we'll use to practice SQL queries.
 
-    2) Optionally download and install this database management software called TablePlus (https://tableplus.com/) which will allow you to interface with the SQLite and PostgreSQL databases we'll be working with in this unit. FYI: TablePlus is my preferred / recommended tool these days, but you could always use alternative tools like DB Browser and/or PgAdmin instead, as referenced in the materials.
+    2) Optionally download and install this FREE database management software called TablePlus (https://tableplus.com/) which will allow you to interface with the SQLite and PostgreSQL databases we'll be working with in this unit. FYI: TablePlus is my preferred / recommended tool these days, but you could always use alternative tools like DB Browser and/or PgAdmin instead, as referenced in the materials.
 
 And as always, fork the official Lambda repo: https://github.com/LambdaSchool/DS-Unit-3-Sprint-2-SQL-and-Databases
 ```
@@ -26,7 +26,7 @@ Lambda Material:
  
 DBMS Tool:
 
-  + https://tableplus.com/
+  + https://tableplus.com/ (FREE)
 
 Practice SQLite Database:
 
