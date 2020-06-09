@@ -163,6 +163,20 @@ ORDER BY customer_count DESC
 LIMIT 5
 ```
 
+FYI: you can use the results of one query as a dataset to select from. This is known as a "subquery" approach:
+
+```sql
+-- on average, how many customers in each country?
+SELECT avg(customer_count) --> 2.45
+FROM (
+    SELECT
+      Country
+      ,count(distinct CustomerId) as customer_count -- > 59
+    FROM customers
+    GROUP BY Country
+) subq
+```
+
 ## Part II - Multi-Table SQL
 
 
