@@ -29,8 +29,8 @@ class SqliteService():
 
 class ElephantSQLService():
 
-    def __init__(self):
-        self.connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST)
+    def __init__(self, db_name=DB_NAME, db_user=DB_USER, db_password=DB_PASSWORD, db_host=DB_HOST):
+        self.connection = psycopg2.connect(dbname=db_name, user=db_user, password=db_password, host=db_host)
         self.cursor = self.connection.cursor()
 
     def create_characters_table(self):
