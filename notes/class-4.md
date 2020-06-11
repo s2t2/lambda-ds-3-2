@@ -22,6 +22,11 @@ Database Transactions and ACID Properties:
   + https://www.techopedia.com/definition/23949/atomicity-consistency-isolation-durability-acid
   + https://pynative.com/python-mysql-transaction-management-using-commit-rollback/
 
+MongoDB and ACID:
+
+  + https://stackoverflow.com/questions/7149890/what-did-mongodb-not-being-acid-compliant-before-v4-really-mean
+  + https://www.mongodb.com/blog/post/multi-document-transactions-in-mongodb
+
 ## Part II
 
 Normalization / Database Design Practice (FYI / BONUS):
