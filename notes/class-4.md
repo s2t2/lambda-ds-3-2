@@ -25,6 +25,7 @@ Database Transactions and ACID Properties:
 MongoDB and ACID:
 
   + https://stackoverflow.com/questions/7149890/what-did-mongodb-not-being-acid-compliant-before-v4-really-mean
+  + https://techcrunch.com/2018/02/15/mongodb-gets-support-for-multi-document-acid-transactions/
   + https://www.mongodb.com/blog/post/multi-document-transactions-in-mongodb
 
 ## Part II
